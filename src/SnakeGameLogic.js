@@ -74,7 +74,7 @@ SnakeGameLogic.prototype.nextState = function() {
     do {
       this.fruit.x = Math.floor(Math.random() * COLS);
       this.fruit.y = Math.floor(Math.random() * ROWS);
-    } while (this.joints.some(x => x.x === this.fruit.x) || this.joints.some(x => x.y === this.fruit.y));
+    } while (this.joints.some(x => x.x === this.fruit.x || x.y === this.fruit.y));
   }
   return result;
 }
