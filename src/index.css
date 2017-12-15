@@ -12,11 +12,8 @@ body {
   flex-grow: 1;
   box-sizing: border-box;
   margin: 1px;
-  background-color: white;
+  background: #7cbc0a linear-gradient(135deg, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
   box-shadow: 1px 1px 3px 0px rgba(40, 65, 0, 0.8);
-}
-.table__cell.end {
-  background-color: black;
 }
 .table__cell::after {
   display: block;
@@ -24,13 +21,13 @@ body {
   padding-bottom: 100%;
 }
 .game.end .joint {
-  background-color: gray;
+  background: gray;
 }
 .joint {
-  background-color: black;
+  background: black;
 }
 .fruit {
-  background-color: red;
+  background: red;
 }
 .description {
   margin-top: 1em;

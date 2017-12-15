@@ -109,7 +109,7 @@ export default class SnakeGame {
       <div class="table">
         ${this.table.map(cols => html`
           <div class="table__row">
-            ${cols.map(cell => html`<div class$="table__cell ${cell === 'joint' ? 'joint' : cell === 'fruit' ? 'fruit' : ''}${this.gameState === 'end' ? 'end' : ''}"></div>`)}
+            ${cols.map(cell => html`<div class$="table__cell ${cell === 'joint' ? 'joint' : cell === 'fruit' ? 'fruit' : ''}"></div>`)}
           </div>`)}
       </div>
       <div class="description">
