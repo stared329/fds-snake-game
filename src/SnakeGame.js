@@ -1,4 +1,4 @@
-import {html, render} from 'lit-html/lib/lit-extended';
+import { html, render } from 'lit-html/lib/lit-extended';
 import throttle from 'lodash.throttle';
 import {
   ROWS,
@@ -55,6 +55,7 @@ export default class SnakeGame {
   }
 
   init() {
+    this.delay = INITIAL_DELAY;
     this.table = new Array(ROWS).fill(null).map(() => new Array(COLS).fill(null));
     this.logic = new SnakeGameLogic();
     this.updateTable();
@@ -82,7 +83,7 @@ export default class SnakeGame {
   }
 
   updateTable() {
-    const {joints, fruit: f} = this.logic;
+    const { joints, fruit: f } = this.logic;
 
     if (!joints || !f) return;
 
@@ -104,11 +105,11 @@ export default class SnakeGame {
   }
 
   template() {
-    return html`<div class$="game ${this.gameState === 'end' ? 'end' : ''}">
+      return html `<div class$="game ${this.gameState === 'end' ? 'end' : ''}">
       <div class="table">
         ${this.table.map(cols => html`
           <div class="table__row">
-            ${cols.map(cell => html`<div class$="table__cell ${cell === 'joint' ? 'joint' : cell === 'fruit' ? 'fruit' : ''}"></div>`)}
+            ${cols.map(cell => html`<div class$="table__cell ${cell === 'joint' ? 'joint' : cell === 'fruit' ? 'fruit' : ''}${this.gameState === 'end' ? 'end' : ''}"></div>`)}
           </div>`)}
       </div>
       <div class="description">
