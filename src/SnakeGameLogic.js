@@ -41,9 +41,6 @@ SnakeGameLogic.prototype.common = function(tmp) {
   } else {
     return false;
   }
-  if (this.joints.every(x => x.x === tmp.x) && this.joints.some(x => x.y === ROWS - 1) ||
-    this.joints.every(x => x.y === tmp.y) && this.joints.some(x => x.x === COLS - 1))
-    return false;
   return true;
 }
 SnakeGameLogic.prototype.nextState = function() {
